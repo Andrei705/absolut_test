@@ -77,6 +77,9 @@
       </set>
     </attachedChunks>
   </component>
+  <component name="StructureViewState">
+    <option name="selectedTab" value="Logical" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a348c347-0740-4d7e-a715-e7c044822be4" name="Changes" comment="" />
