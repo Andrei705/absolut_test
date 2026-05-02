@@ -102,6 +102,7 @@ class UserNoPrivilegesView(
 ):
 
     def create(self, request):
+        pass
 
 
 
