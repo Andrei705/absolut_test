@@ -1,11 +1,13 @@
 from django.db.models import F
-from rest_framework.views import APIView
+from drf_yasg.utils import swagger_auto_schema
+from rest_framework import mixins, viewsets
 from rest_framework import status, response
-from models import Survey
+from surveys_ugc.models import Survey
 
 
-class SurveyViews(APIView):
+class SurveyViews(mixins.ListModelMixin, viewsets.GenericViewSet):
 
+    @swagger_auto_schema(method='GET')
     def get(self, request):
         survey_id = request.query_params.get('survey')
         author_name = request.query_params.get('author')

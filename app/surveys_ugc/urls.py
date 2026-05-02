@@ -1,10 +1,11 @@
 from django.urls import include, path
 from rest_framework import routers
-
-import views
+from surveys_ugc.views.view_users_undergoing_surveys import SurveyViews
+from surveys_ugc.views.view_user_privileges import UserPrivilegesView
 
 router = routers.DefaultRouter()
-router.register(r"survey", views.SurveyViews)
+# router.register(r"survey", SurveyViews, basename='survey_views')
+router.register(r"user_privileges", UserPrivilegesView, basename='privileges')
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
