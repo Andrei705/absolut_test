@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a348c347-0740-4d7e-a715-e7c044822be4" name="Changes" comment="[TEST-123] - add models.py, urls, views.py">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/absolut_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/absolut_test.iml" afterDir="false" />
+    <list default="true" id="a348c347-0740-4d7e-a715-e7c044822be4" name="Changes" comment="[TEST-133] - изменеияни по проекту">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/surveys_ugc/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/surveys_ugc/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/surveys_ugc/serializers/serializers_user_no_privalages.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/surveys_ugc/serializers/serializers_user_no_privalages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/surveys_ugc/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/surveys_ugc/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/surveys_ugc/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/surveys_ugc/views/view_user_privileges.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/surveys_ugc/views/view_user_privileges.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/surveys_ugc/views/view_users_undergoing_surveys.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/surveys_ugc/views/view_users_undergoing_surveys.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,43 +53,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.app.db: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.db: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/fylht/PycharmProjects/absolut_test&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.app.db: Compose Deployment.executor": "Run",
+    "Docker.app: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.db: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/fylht/PycharmProjects/absolut_test",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\fylht\PycharmProjects\absolut_test\app" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.app.db: Compose Deployment">
+  <component name="RunManager" selected="Docker.app: Compose Deployment">
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="app: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="app/docker-compose.yml" />
+        </settings>
       </deployment>
       <method v="2" />
     </configuration>
@@ -131,6 +138,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.app: Compose Deployment" />
         <item itemvalue="Docker.app.db: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
@@ -159,7 +167,8 @@
       <workItem from="1777014171027" duration="2621000" />
       <workItem from="1777275492224" duration="531000" />
       <workItem from="1777697932601" duration="21354000" />
-      <workItem from="1777719727814" duration="19079000" />
+      <workItem from="1777719727814" duration="19887000" />
+      <workItem from="1777821035662" duration="15472000" />
     </task>
     <task id="LOCAL-00001" summary="[TEST-123] - temlate app">
       <option name="closed" value="true" />
@@ -201,17 +210,45 @@
       <option name="project" value="LOCAL" />
       <updated>1777016792181</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="[TEST-133] - изменеияни по проекту">
+      <option name="closed" value="true" />
+      <created>1777739705705</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1777739705706</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[TEST-133] - изменеияни по проекту">
+      <option name="closed" value="true" />
+      <created>1777739724322</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1777739724322</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[TEST-123] - temlate app" />
     <MESSAGE value="1212121" />
     <MESSAGE value="[TEST-123] - add urls" />
     <MESSAGE value="[TEST-123] - add models.py, urls, views.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="[TEST-123] - add models.py, urls, views.py" />
+    <MESSAGE value="[TEST-133] - изменеияни по проекту" />
+    <option name="LAST_COMMIT_MESSAGE" value="[TEST-133] - изменеияни по проекту" />
   </component>
 </project>

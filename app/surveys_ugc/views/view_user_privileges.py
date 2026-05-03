@@ -10,6 +10,7 @@ from surveys_ugc.serializers.serializers_update_user_privileges import UpdateSur
 from surveys_ugc.serializers.serializers_user_privileges import CreateSurveySerializer
 
 
+
 class UserPrivilegesView(
     mixins.CreateModelMixin,
     mixins.UpdateModelMixin,
@@ -23,11 +24,11 @@ class UserPrivilegesView(
         question = data.pop('question')
 
         survey_id:int = self.create_survey(data=data)
-        question_id:list = self.create_question(data=question)
+        question_id:list = self.create_question(data=question, survey_id=survey_id,)
 
-        self.create_answer(question_id=question_id, survey_id=survey_id, data=question)
+        self.create_answer(question_id=question_id, data=question)
 
-        return Response({'id':1}, status=status.HTTP_201_CREATED)
+        return Response(data, status=status.HTTP_201_CREATED)
 
     @staticmethod
 
@@ -39,12 +40,13 @@ class UserPrivilegesView(
         return queryset.id
 
     @staticmethod
-    def create_question(data: dict) -> list:
+    def create_question(survey_id: int, data: dict) -> list:
         question = Question.objects.bulk_create(
             [
                 Question(
                     question=data[index].get('question'),
-                    sorted=data[index].get('sorted')
+                    sorted=data[index].get('sorted'),
+                    survey_id=survey_id,
                 )
                 for index in range(0, len(data))
             ]
@@ -53,7 +55,7 @@ class UserPrivilegesView(
         return [field.id for field in question]
 
     @staticmethod
-    def create_answer(question_id: list, survey_id: int, data: dict) -> None:
+    def create_answer(question_id: list, data: dict) -> None:
         l1 = 0
         l2 = 0
         res = []
@@ -64,7 +66,6 @@ class UserPrivilegesView(
                     res.append(
                         AnswerToQuestion(
                             answer=data[l1].get('answer_to_question')[l2].get('answer'),
-                            survey_id=survey_id,
                             question_id=question_id[l1],
                             sorted=data[l1].get('answer_to_question')[l2].get('sorted')
                         )
@@ -93,17 +94,6 @@ class UserPrivilegesView(
         queryset = Question.objects.filter(pk=pk)
         queryset.update(**data)
         return Response(queryset.values(), status=status.HTTP_201_CREATED)
-
-
-class UserNoPrivilegesView(
-    mixins.CreateModelMixin,
-    # mixins.UpdateModelMixin,
-    viewsets.GenericViewSet
-):
-
-    def create(self, request):
-        pass
-
 
 
 
