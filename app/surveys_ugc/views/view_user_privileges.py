@@ -1,9 +1,6 @@
 from django.db import transaction
-from django.db.models import Count
-from django.db.models.functions import JSONObject
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework import mixins, viewsets, views, generics, status
-from rest_framework.decorators import action
+from rest_framework import mixins, viewsets, status
 from rest_framework.response import Response
 from surveys_ugc.models import Survey, Question, AnswerToQuestion
 from surveys_ugc.serializers.serializers_update_user_privileges import UpdateSurveySerializer, UpdateQuestionSerializer
